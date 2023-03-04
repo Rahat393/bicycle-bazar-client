@@ -9,7 +9,9 @@ const Main = () => {
     <div className='wrapper'>
       <div className='content'>
      <Navbar></Navbar>
-     <Outlet className='max-w-screen-xl mx-auto'></Outlet>
+     <div className='outlet'>
+     <Outlet ></Outlet>
+     </div>
       </div>
       <footer className='footerr'>
       <Footer></Footer>

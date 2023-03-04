@@ -11,3 +11,8 @@
 .footerr {
   margin-top: auto;
 }
+
+.outlet {
+  max-width: 1280px;
+  margin: auto;
+}
