@@ -1,5 +1,5 @@
 import React from 'react';
-import img from '../../assets/bannerImg/pexels-pixabay-417059.jpg'
+import img from '../../assets/bannerImg/pexels-pixabay-207779.jpg'
 import './Banner.css'
 
 const Banner = () => {
@@ -20,8 +20,8 @@ const Banner = () => {
   return (
     <div >
      <div className='mt-10' >
-     <img className='h-[550px] w-full rounded-lg' src={img} alt="" />
-      <h2 style={styles} className='title text-[gradient-to-r from-white to-secondary] text-4xl font-semibold font-[Metamorphous]'>Find the cicycle <br /> of your choice within <br /> your affordability</h2>
+     <img className='h-[600px] w-full rounded-lg' src={img} alt="" />
+      <h2 style={styles} className='title text-[gradient-to-r from-white to-secondary] text-4xl font-semibold font-[Metamorphous] '>Find the cicycle <br /> <span  >of your choice within</span> <br /> your affordability</h2>
      </div>
     </div>
   );

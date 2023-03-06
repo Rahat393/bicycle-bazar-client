@@ -18,7 +18,7 @@ const Categories = () => {
   })
   return (
     <div>
-      <h1 className='text-4xl font-bold text-center mt-16 mb-8 font-[Metamorphous] text-primary'>Choose A Categorie  </h1>
+      <h1 className='text-4xl font-bold text-center mt-16 mb-8 font-[Metamorphous] '>Choose A Categorie  </h1>
       <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-11'>
       {
         categories?.map(categorie => <CategoryCard
