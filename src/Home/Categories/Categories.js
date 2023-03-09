@@ -1,9 +1,10 @@
 import React from 'react';
 import {   useQuery } from 'react-query';
+import Loader from '../../Components/Loader';
 import CategoryCard from '../CategoryCard/CategoryCard';
 
 const Categories = () => {
-  const {data: categories} =  useQuery( {
+  const {data: categories, isLoading} =  useQuery( {
     queryKey: ["categories"],
     queryFn: async() => {
       try{
@@ -15,10 +16,15 @@ const Categories = () => {
 
       }
     }
-  })
+  });
+  if(isLoading){
+    return <Loader/>
+  }
   return (
     <div>
-      <h1 className='text-4xl font-bold text-center mt-16 mb-8 font-[Metamorphous] '>Choose A Categorie  </h1>
+      <div className="   ">
+      <h1 className='divider text-4xl font-bold text-center place-items-center  mt-16 mb-8 font-[Metamorphous] '>Choose A Categorie  </h1>
+      </div>
       <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-11'>
       {
         categories?.map(categorie => <CategoryCard

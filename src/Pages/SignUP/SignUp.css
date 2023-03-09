@@ -1,0 +1,14 @@
+.email-icon {
+  position: absolute;
+  top: 10px;
+  /* left: 10px; */
+}
+
+.email-input {
+  position: relative;
+  padding-left: 30px;
+}
+
+.email-input::placeholder {
+  color: transparent;
+}

@@ -4,7 +4,7 @@ import ProductsCard from '../ProductCard/ProductsCard';
 
 const Products = () => {
   const {products, category_name} = useLoaderData()
-   console.log(category_name);
+  //  console.log(category_name);
   return (
     <div>
      <h2 className='text-4xl font-semibold text-center font-[Metamorphous] mt-10 mb-7'>{category_name}</h2>

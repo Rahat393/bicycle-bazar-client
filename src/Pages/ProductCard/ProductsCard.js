@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BsFillPatchCheckFill } from 'react-icons/bs';
+import BookingModal from '../BookingModal/BookingModal';
 
 
 const ProductsCard = ({product}) => {
+  const [orders, setOrders] = useState(null)
+
   const {name, img, location, resale_price, 
     orginal_price, years_of_use,  product_condition, 
     posted_on, seller_name, category_name   } = product;
-    console.log(category_name);
+    // console.log(category_name);
   return (
     <div>
+      <div>
       <h2>{category_name}</h2>
       <div className="      p-4 rounded-2xl   shadow-2xl">
   <figure><img className='h-96 w-[640px] rounded-lg'  src={img} alt="Shoes" /></figure>
@@ -27,11 +31,20 @@ const ProductsCard = ({product}) => {
       <h4 className='flex'>Seller Name: {seller_name} <BsFillPatchCheckFill className='mt-1.5 ml-2 text-blue-700'/></h4>
     </div>
    </div>
-   <div className='text-center mt-4'>
-    <button className='text-2xl font-semibold w-3/4 font-[Metamorphous] p-2 rounded-md bg-gradient-to-r from-primary to-secondary text-white'>Book Now</button>
+   <div className='text-center mt-4   '>
+    <button className='w-3/4'>
+    <label onClick={() => setOrders(product)} htmlFor="booking-Modal" className='text-2xl font-semibold    p-2  lg:px-36   rounded-md  font-[Metamorphous]  bg-gradient-to-r from-primary to-secondary text-white'>Book Now</label>
+
+    </button>
    </div>
     </div>
-   
+      </div>
+   { orders &&
+    <BookingModal
+    orders={orders}
+    setOrders={setOrders}
+    ></BookingModal>
+   }
 </div>
     
   );
