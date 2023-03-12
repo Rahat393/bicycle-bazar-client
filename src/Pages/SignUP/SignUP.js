@@ -31,7 +31,7 @@ const SignUP = () => {
             }
             updateUser(userInfo)
                 .then(() => {
-                    // saveUser(data.name, data.email, data.role)
+                    saveUser(data.name, data.email, data.role)
                 })
                 .catch(err => console.log(err));
         })
@@ -39,6 +39,21 @@ const SignUP = () => {
             console.log(error)
             setSignUPError(error.message)
         });
+};
+
+const saveUser = ( name, email, role) => {
+   const user = {name, email, role};
+   fetch('http://localhost:5000/users',{
+    method: 'POST',
+    headers: {
+        'content-type' : 'application/json'
+    },
+    body: JSON.stringify(user)
+   })
+   .then(res => res.json())
+   .then(data => {
+    console.log(data);
+   })
 }
 
 
@@ -58,12 +73,11 @@ const SignUP = () => {
             <div className="form-control w-full max-w-xs">
                 <label className="label"> <span className="label-text">Email</span></label>
                 <input type="email" {...register("email", {
-                    required: true
+                    required: "Email is Required"
                 })} className="input input-bordered w-full max-w-xs email-input"  />
                 
                 {errors.email && <p className='text-red-500'>{errors.email.message}</p>}
-            {/* <HiOutlineMail className='email-icon'></HiOutlineMail> */}
-            </div>
+             </div>
             <div className="form-control w-full max-w-xs">
                 <label className="label"> <span className="label-text">Password</span></label>
                 <input type="password" {...register("password", {
@@ -75,8 +89,8 @@ const SignUP = () => {
             <div className="form-control w-full max-w-xs">
                 <label className="label"> <span className="label-text text-xl">Select Account Type</span></label>
                 <select {...register("role")} className="select   p-3 border-gray-600   w-full max-w-xs" >
-                    <option value="buyer">buyer</option>
-                    <option value="seller">seller</option>
+                    <option value="buyer">Buyer</option>
+                    <option value="seller">Seller</option>
 
                 </select>
             </div>
