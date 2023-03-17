@@ -13,7 +13,7 @@ const ProductsCard = ({product}) => {
   return (
     <div>
       <div>
-      <h2>{category_name}</h2>
+      {/* <h2>{category_name}</h2> */}
       <div className="      p-4 rounded-2xl   shadow-2xl">
   <figure><img className='h-96 w-[640px] rounded-lg'  src={img} alt="Shoes" /></figure>
    
