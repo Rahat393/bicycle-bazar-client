@@ -30,7 +30,7 @@ const AllSeller = () => {
      sellers?.map((seller, i) =>   <tr key={seller._key}>
         <th> {i+1}</th>
         <td> {seller.name}</td>
-        <td>${seller.email} </td>
+        <td>{seller.email} </td>
         <td> <button className='btn btn-sm btn-primary text-white' type="submit">DELETE</button></td>
       </tr>)
     }

@@ -28,14 +28,14 @@ const MyProducts = () => {
     return <Loader></Loader>
   }
   return (
-    <div>
-      <h2>products {products?.length}</h2>
+    <div  >
+      <h2 className='text-2xl font-semibold mt-9 mb-4 text-center font-[Metamorphous]'>My Products  </h2>
      <div className='grid lg:grid-cols-2 gap-8 mb-36'>
      {
         products?.map(product =>  <MypProductCard
          key={product._id}
          product={product}
-         refetch={refetch}
+         refetch={refetch()}
         ></MypProductCard>)
       }
      </div>

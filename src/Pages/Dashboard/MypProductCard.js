@@ -22,9 +22,9 @@ const {description, productImg, _id, postTime, location, orginalPrice, productCo
       })
       .then(res => res.json())
       .then(data => {
-        if(data.deletedCount > 0){
-          refetch()
+        if(data.deletedCount === 1){
           toast.success('Product Deleted Successfully')
+          refetch()
         }
         console.log(data);
       })

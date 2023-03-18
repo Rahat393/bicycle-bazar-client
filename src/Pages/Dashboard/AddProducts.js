@@ -36,7 +36,7 @@ const AddProducts = () => {
                 location: data.location,
                 productCondition: data.productCondition,
                 productImg :  productImg,
-                description : data.description,
+                // description : data.description,
         
                 sellerName : data.sellerName,
                 sellerEmail: data.sellerEmail,
@@ -136,13 +136,13 @@ const AddProducts = () => {
                     </div>
                         </div>
 
-                        <div className="form-control w-full max-w-xs">
+                        {/* <div className="form-control w-full max-w-xs">
                         <label className="label"> <span className="label-text">Description</span></label>
                         <textarea  placeholder="Description" className="textarea textarea-bordered textarea-lg w-full max-w-xs"  {...register("description", {
                             required: "Description is Required"
                         })}   />
                         {errors.name && <p className='text-red-500'>{errors.name.message}</p>}
-                    </div>
+                    </div> */}
             </div>
             <p className='   mt-6 mb-2 font-semibold'>Seller Info</p>
 
@@ -171,6 +171,7 @@ const AddProducts = () => {
                     </div>
             </div>
            <input className='btn btn-primary text-white w-full mt-4 mb-8' value="Add Product" type="submit" />
+           {/* <button className='btn btn-primary text-white w-full mt-4 mb-8' type="submit">Add Product</button> */}
                 </form>
     </div>
   );

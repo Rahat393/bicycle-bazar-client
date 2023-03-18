@@ -1,6 +1,13 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import Navbar from '../../Pages/Shared/Navbar';
+import './DashBoardLayout.css'
+import { MdOutlineBorderColor  } from 'react-icons/md';
+import { HiUsers  } from 'react-icons/hi';
+import { FaUserTie   } from 'react-icons/fa';
+import { CgExtensionAdd   } from 'react-icons/cg';
+import { MdOutlineProductionQuantityLimits   } from 'react-icons/md';
+
 
 const DashboardLayout = () => {
   return (
@@ -11,27 +18,39 @@ const DashboardLayout = () => {
                 <div className="drawer-content">
                     <Outlet></Outlet>
                 </div>
-                <h3 className='ml-7 mt-7  absolute top-10 mb-8  '>Dashboard</h3>
+                {/* <h3 className='ml-7 mt-7  absolute top-10 mb-8  '>Dashboard</h3> */}
 
                 <div className="drawer-side">
                     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80   text-base-content">
-                        {/* <li><Link to="/dashboard">My Appointments</Link></li> */}
-                          {
+                    <ul className="  p-4 w-80   text-base-content">
+                           { <div className='flex mt-9'>
+                            <MdOutlineBorderColor className='mt-2 mr-2 '></MdOutlineBorderColor>
                             <li><Link to='/dashboard/myorders'>My Orders</Link></li>
+                           </div>
                           }
                         {
                              <>
+                              <div className='flex mt-7 '>
+                              <HiUsers className='mt-2 mr-2'></HiUsers>
                                 <li><Link to='/dashboard/allbuyers'>All Buyer</Link></li>
+                             </div>
+                             <div className='flex mt-7'>
+                             <FaUserTie className='mt-2 mr-2'></FaUserTie>
                                 <li><Link to='/dashboard/allsellers'>All Seller</Link></li>
+                             </div>
 
                             </>
                         }
                         {
                              
-                            <>
+                            <>   <div className='flex mt-7'>
+                              <CgExtensionAdd className='mt-1 mr-2 text-2xl'></CgExtensionAdd>
                                 <li><Link to='/dashboard/addproducts'>Add A Product</Link></li>
+                            </div>
+                            <div className='flex mt-7'>
+                            <MdOutlineProductionQuantityLimits className='mt-2 mr-2'></MdOutlineProductionQuantityLimits>
                                 <li><Link to='/dashboard/myproducts'>My Product</Link></li>
+                            </div>
                             </>
                         }
 
