@@ -27,6 +27,20 @@ const AllUsers = () => {
       })
   }
 
+  const handleUserDelete = id => {
+    fetch(`http://localhost:5000/users/${id}`,{
+      method: 'DELETE'
+    })
+    .then(res => res.json())
+    .then(data => {
+      // console.log(data);
+        if(data.deletedCount > 0){
+          toast.success('User Delete Successfully !!')
+          refetch()
+        }
+    })
+  }
+
   if(isLoading){
     return <Loader/>
   }
@@ -54,7 +68,7 @@ const AllUsers = () => {
           <td> {buyer.name}</td>
           <td>{buyer.email} </td>
           <td> { buyer?.role !== 'admin' && <button onClick={() => handleMakeAdmin(buyer._id)} className='btn btn-xs btn-primary text-white'>Make Admin</button>}</td>
-          <td> <button className='btn btn-sm btn-primary text-white' type="submit">DELETE</button></td>
+          <td> <button onClick={() => handleUserDelete(buyer._id)} className='btn btn-sm btn-primary text-white' type="submit">DELETE</button></td>
         </tr>)
       }
     </tbody>
