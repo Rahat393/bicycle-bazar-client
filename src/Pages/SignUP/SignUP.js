@@ -58,7 +58,7 @@ const saveUser = ( name, email, role) => {
 
 
   return (
-    <div className='h-[800px] flex justify-center items-center'>
+    <div className='h-[600px] flex justify-center items-center'>
     <div className='w-96 p-7'>
         <h2 className='text-xl text-center'>Sign Up</h2>
         <form onSubmit={handleSubmit(handleSignUp)}>
@@ -99,7 +99,7 @@ const saveUser = ( name, email, role) => {
             {signUpError && <p className='text-red-600'>{signUpError}</p>}
         </form>
         <p>Already have an account <Link className='text-secondary' to="/login">Please Login</Link></p>
-        <div className="divider">OR</div>
+         
         {/* <button onClick={handleGoogleSignIn} className='btn btn-outline w-full'>CONTINUE WITH GOOGLE</button> */}
 
 
